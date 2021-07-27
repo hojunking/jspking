@@ -21,4 +21,4 @@ public class BoardList implements Command {
 		return "board/boardList";
 	}
 
-}
+} 

@@ -7,10 +7,13 @@
 <meta charset="UTF-8">
 <title>공지글 상세보기</title>
 <script type="text/javascript">
-	function getRecord(n){
-		frm.bId.value=n;
-		frm.submit();
-	}
+	function path(n){
+		if(n==1){
+		frm.action('updateForm.do');
+		}else{
+		frm.action("deleteBoard.do");
+		}
+	frm.submit();}
 </script>
 </head>
 <body>
@@ -20,7 +23,7 @@
 		</div>
 		<div>
 			<div>
-				<form id="frm" name="frm" action="updateForm.do" method="post">
+				<form id="frm" name="frm" action="" method="post">
 					<table border="1">
 						<tr>
 							<th width="100">글 번호</th>
@@ -42,15 +45,15 @@
 						</tr>
 					</table>
 					<br />
-					<button type="button" onclick="location.href='boardList.do'">목록</button>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="button" onclick="getRecord(${board.bId })">수정</button>
-					&nbsp;&nbsp;&nbsp;&nbsp; <input type="hidden" id="bId" name="bId">
+					<button type="button" onclick="location.href='boardList.do'">목록</button>&nbsp;&nbsp;&nbsp;&nbsp;
+					<button type="button" onclick="path(1)">수정</button>&nbsp;&nbsp;&nbsp;&nbsp;
+					<button type="button" onclick="path(2)">삭제</button>
+					<input type="hidden" id="bId" name="bId" value="${board.bId }">
 				</form>
 			</div>
 			<form id="frc" name="frc" action="deleteBoard.do" method="post">
-				<input type="hidden" id="bId" name="bId" value="${board.bId }">
-				<button type="submit">삭제</button>
+				
+				
 			</form>
 
 		</div>
