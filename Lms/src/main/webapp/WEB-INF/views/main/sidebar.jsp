@@ -104,9 +104,9 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="snsList.do">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Community</span></a>
             </li>
 
             <!-- Divider -->
@@ -126,5 +126,5 @@
 
         </ul>
         <!-- End of Sidebar -->
-        </div>
+
 </body>

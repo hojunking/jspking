@@ -14,7 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.Lms.command.Command;
 import co.yedam.Lms.command.Login;
 import co.yedam.Lms.command.LoginForm;
+import co.yedam.Lms.command.Logout;
 import co.yedam.Lms.command.Main;
+import co.yedam.Lms.command.SearchSns;
+import co.yedam.Lms.command.SnsList;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -30,6 +33,9 @@ public class FrontController extends HttpServlet {
 	map.put("/main.do", new Main());
 	map.put("/loginForm.do", new LoginForm());
 	map.put("/login.do",new Login());
+	map.put("/logout.do",new Logout());
+	map.put("/snsList.do", new SnsList());
+	map.put("/searchSns.do",new SearchSns());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

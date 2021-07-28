@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +39,7 @@
 
 				<jsp:include page="topbar.jsp" />
 
-				<jsp:include page="boardList.jsp" /><!-- 몸체 -->
+				<jsp:include page="snsReply.jsp" /><!-- 몸체 -->
 
 				<jsp:include page="footer.jsp" /><!-- footer -->
 			</div>
