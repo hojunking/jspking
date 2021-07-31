@@ -10,8 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.prj.sports.board.command.SelectBoard;
+import co.prj.sports.board.command.UpdateBoard;
+import co.prj.sports.board.command.BoardList;
 import co.prj.sports.board.command.Command;
+import co.prj.sports.board.command.DeleteBoard;
+import co.prj.sports.board.command.DeleteForm;
 import co.prj.sports.board.command.HomeCommand;
+import co.prj.sports.board.command.InsertBoard;
+import co.prj.sports.board.command.InsertForm;
+import co.prj.sports.board.command.UpdateForm;
 
 
 public class FrontController extends HttpServlet {
@@ -29,8 +37,13 @@ public class FrontController extends HttpServlet {
 		// TODO Auto-generated method stub
 	map.put("/home.do", new HomeCommand());
 	map.put("/boardList.do", new BoardList());
-	
-		
+	map.put("/selectBoard.do", new SelectBoard());
+	map.put("/insertForm.do",new InsertForm());
+	map.put("/insertBoard.do",new InsertBoard());
+	map.put("/deleteForm.do",new DeleteForm());
+	map.put("/deleteBoard.do", new DeleteBoard());
+	map.put("/updateForm.do",new UpdateForm());
+	map.put("/updateBoard.do",new UpdateBoard());
 	}
 
 	/**

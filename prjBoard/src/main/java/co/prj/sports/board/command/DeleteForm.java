@@ -1,4 +1,4 @@
-package co.prj.sports.board.web;
+package co.prj.sports.board.command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.prj.sports.board.command.Command;
 import co.prj.sports.board.service.BoardService;
 import co.prj.sports.board.serviceImpl.BoardServiceImpl;
 import co.prj.sports.board.vo.BoardVO;
 
-public class BoardList implements Command {
+public class DeleteForm implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -20,7 +19,7 @@ public class BoardList implements Command {
 		boards=dao.boardSelectList();
 		request.setAttribute("boards", boards);
 		
-		return "main/boardList";
+		return "main/deleteForm";
 	}
 
 }

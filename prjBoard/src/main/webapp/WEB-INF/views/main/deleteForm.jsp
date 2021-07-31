@@ -5,19 +5,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>boardList</title>
-<script>
-function getRecord(n){
-	frm.bId.value=n;
-	frm.submit();
-}
+<title>글 삭제하기</title>
+<script type="text/javascript">
+	function getRecord(n){
+		var d =confirm("정말로 삭제하시겠습니까?")
+		if(d== true){
+		frm.bId.value=n;
+		frm.submit();
+		alert("삭제완료!!")
+		}else{
+			
+		}
+	}
 </script>
 
 </head>
 <body>
 	<div align="center">
 		<div>
-			<h2>공지사항리스트</h2>
+			<h2>삭제하기</h2>
 		</div>
 		<div>
 			<table border="1">
@@ -29,7 +35,9 @@ function getRecord(n){
 					<th width="100">hit</th>
 				</tr>
 				<c:forEach var="boards" items="${boards }">
-					<tr onclick="getRecord(${boards.bId })">
+					<tr onmouseover="this.style.background='red'"
+						onmouseout="this.style.background='white'"
+						onclick="getRecord(${boards.bId })">
 						<td width="200">${boards.bId }</td>
 						<td width="200">${boards.bWriter }</td>
 						<td width="200">${boards.bTitle }</td>
@@ -38,15 +46,15 @@ function getRecord(n){
 					</tr>
 				</c:forEach>
 			</table>
-		</div><div>
-		<form id="frm" name="frm" action="selectBoard.do" method="post">
-			<input type="hidden" id="bId" name="bId">
-			</form>
-		</div><hr>
+			<div>
+				<form id="frm" name="frm" action="deleteBoard.do" method="post">
+					<input type="hidden" id="bId" name="bId">
+				</form>
+			</div>
+		</div>
+		<hr>
 		<div>
-			<button onclick="location.href='home.do'">home</button>
-			<button onclick="location.href='insertForm.do'">새 글작성</button>
-			<button onclick="location.href='deleteForm.do'">글 삭제하기</button> 
+			<button onclick="location.href='boardList.do'">삭제완료</button>
 		</div>
 	</div>
 </body>
