@@ -20,6 +20,8 @@ import co.prj.sports.board.command.HomeCommand;
 import co.prj.sports.board.command.InsertBoard;
 import co.prj.sports.board.command.InsertForm;
 import co.prj.sports.board.command.UpdateForm;
+import co.prj.sports.sns.command.SearchSns;
+import co.prj.sports.sns.command.SnsList;
 
 
 public class FrontController extends HttpServlet {
@@ -44,6 +46,8 @@ public class FrontController extends HttpServlet {
 	map.put("/deleteBoard.do", new DeleteBoard());
 	map.put("/updateForm.do",new UpdateForm());
 	map.put("/updateBoard.do",new UpdateBoard());
+	map.put("/snsList.do",new SnsList());
+	map.put("/searchSns.do",new SearchSns());
 	}
 
 	/**

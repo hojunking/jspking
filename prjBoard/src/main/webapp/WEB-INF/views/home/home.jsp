@@ -10,6 +10,8 @@
 	<div align="center">
 		<div><h2>홈페이지 입니다</h2></div>
 		<div><a href="boardList.do">공지사항 리스트</a></div>
+		<div><a href="snsList.do">SNS</a></div>
+		
 	</div>
 </body>
 </html>
