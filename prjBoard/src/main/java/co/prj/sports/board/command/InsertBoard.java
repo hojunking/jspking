@@ -23,7 +23,6 @@ public class InsertBoard implements Command {
 		}else {
 			path="main/boardError";
 		}
-		
 		return path;
 	}
 

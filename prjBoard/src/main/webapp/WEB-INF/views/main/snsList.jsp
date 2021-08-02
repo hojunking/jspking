@@ -22,6 +22,7 @@ function getRecord(n){
 				<th>작성일자</th>
 				<th>작성자</th>
 				<th>댓글수</th>
+				<th>조회수</th>
 			</tr>
 			<c:forEach var="sns" items="${list }">
 				<tr onclick="getRecord(${sns.sNo })">
@@ -30,12 +31,17 @@ function getRecord(n){
 					<td>${sns.sDate }</td>
 					<td>${sns.sWriter }</td>
 					<td>${sns.sAno }</td>
+					<td>${sns.sHit}</td>
 				</tr>
 			</c:forEach>
 		</table>
 		<form id="frm" name="frm" action="searchSns.do" method="post">
 			<input type="hidden" id="sNo" name="sNo">
 		</form>
+		<div><br/>
+			<button onclick="location.href='snsInsertForm.do'">글작성하기</button>
+			<button onclick="location.href='home.do'">홈으로</button>
+		</div>
 	</div>
 </body>
 </html>

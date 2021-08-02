@@ -98,7 +98,7 @@ public class BoardServiceImpl implements BoardService {
 			n=psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		}finally { 
 			close();
 		}
 		return n;

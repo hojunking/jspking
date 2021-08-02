@@ -20,7 +20,13 @@ import co.prj.sports.board.command.HomeCommand;
 import co.prj.sports.board.command.InsertBoard;
 import co.prj.sports.board.command.InsertForm;
 import co.prj.sports.board.command.UpdateForm;
+import co.prj.sports.event.command.EventList;
+import co.prj.sports.sns.command.CommentsForm;
+import co.prj.sports.sns.command.DeleteComments;
+import co.prj.sports.sns.command.DeleteSns;
 import co.prj.sports.sns.command.SearchSns;
+import co.prj.sports.sns.command.SnsInsert;
+import co.prj.sports.sns.command.SnsInsertForm;
 import co.prj.sports.sns.command.SnsList;
 
 
@@ -31,13 +37,10 @@ public class FrontController extends HttpServlet {
     public FrontController() {
         super();
     }
-
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 	map.put("/home.do", new HomeCommand());
+	
 	map.put("/boardList.do", new BoardList());
 	map.put("/selectBoard.do", new SelectBoard());
 	map.put("/insertForm.do",new InsertForm());
@@ -46,8 +49,17 @@ public class FrontController extends HttpServlet {
 	map.put("/deleteBoard.do", new DeleteBoard());
 	map.put("/updateForm.do",new UpdateForm());
 	map.put("/updateBoard.do",new UpdateBoard());
+	
 	map.put("/snsList.do",new SnsList());
 	map.put("/searchSns.do",new SearchSns());
+	map.put("/snsInsertForm.do", new SnsInsertForm());
+	map.put("/snsInsert.do", new SnsInsert());
+	map.put("/commentsForm.do", new CommentsForm());
+	map.put("/deleteSns.do",new DeleteSns());
+	map.put("/deleteComments.do", new DeleteComments());
+	
+	map.put("/eventList.do",new EventList());
+
 	}
 
 	/**

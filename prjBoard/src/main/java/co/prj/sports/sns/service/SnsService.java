@@ -7,11 +7,14 @@ import co.prj.sports.sns.vo.SnsVO;
 
 public interface SnsService {
 	List<SnsVO> snsSelectList();
-	List<SnsVO> snsSelect(int no);
+	List<SnsVO> snsSelect(int sNo);
 	int snsInsert(SnsVO vo);
 	int commentsInsert(CommentsVO vo);
 	int snsDelete(SnsVO vo);
-	int commentsDelete(CommentsVO vo);
+	void commentsDeleteAll(int sNo);
 	int snsUpdate(SnsVO vo);
-	int commentsUpdate(CommentsVO vo);
+	int commentsDelete(CommentsVO vo);
+	void sHitUpdate(int sNo);
+	void sAnoUpdate(int sNo);
+	void sAnoUpdatedown(int sNo);
 }

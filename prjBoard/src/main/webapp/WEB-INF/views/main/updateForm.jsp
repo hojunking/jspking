@@ -43,6 +43,9 @@
 					<input type="submit" value="저장">
 				</div>
 			</form>
+				<div>
+					<button onclick="location.href='boardList.do'">취소</button>
+				</div>
 		</div>
 	</div>
 </body>

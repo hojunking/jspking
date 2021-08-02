@@ -11,6 +11,7 @@ public class SnsVO extends CommentsVO{
 	private String sTitle;
 	private String sContents;
 	private int sAno;
+	private int sHit;
 
 	public int getsNo() {
 		return sNo;
@@ -61,6 +62,14 @@ public class SnsVO extends CommentsVO{
 	}
 
 	public SnsVO() {
+	}
+
+	public int getsHit() {
+		return sHit;
+	}
+
+	public void setsHit(int sHit) {
+		this.sHit = sHit;
 	}
 
 }
