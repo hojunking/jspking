@@ -8,5 +8,5 @@ public interface EventService {
 	List<EventVO> eventSelectList();
 	int eventDelete(EventVO vo);
 	int eventInsert(EventVO vo);
-	void countUpdate(int eId);
+	int countUpdate(EventVO vo);
 }

@@ -65,16 +65,15 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public int eventInsert(EventVO vo) {
 		String sql="INSERT INTO event(eid, etitle,eevent, enumber,edate)"
-				+ "VALUES(b_SEQ.NEXTVAL,?,?,?,?)";
+				+ "VALUES(e_SEQ.NEXTVAL,?,?,?,?)";
 		int n=0;
 		try {
 			conn=datasource.getConnection();
 			psmt=conn.prepareStatement(sql);
-			psmt.setInt(1, vo.geteId());
-			psmt.setString(2, vo.geteTitle());
-			psmt.setString(3, vo.geteEvent());
-			psmt.setInt(4,vo.geteNumber());
-			psmt.setString(5, vo.geteDate());
+			psmt.setString(1, vo.geteTitle());
+			psmt.setString(2, vo.geteEvent());
+			psmt.setInt(3,vo.geteNumber());
+			psmt.setString(4, vo.geteDate());
 			n=psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -85,18 +84,20 @@ public class EventServiceImpl implements EventService {
 		return n;
 	}
 	@Override
-	public void countUpdate(int eId) {
+	public int countUpdate(EventVO vo) {
 		String sql="UPDATE event SET ecount= ecount+1 WHERE eid=?";
+		int n=0;
 		try {
 			conn=datasource.getConnection();
 			psmt=conn.prepareStatement(sql);
-			psmt.setInt(1, eId);
-			psmt.executeUpdate();
+			psmt.setInt(1, vo.geteId());
+			n= psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			close();
 		}
+		return n;
 	}
 	private void close() {
 		try {
