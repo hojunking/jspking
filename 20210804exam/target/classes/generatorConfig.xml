@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+   <context id="simple" targetRuntime="MyBatis3Simple">
+    <jdbcConnection connectionURL="jdbc:oracle:thin:@localhost:1521:xe" driverClass="oracle.jdbc.driver.OracleDriver" password="demo" userId="demo" />
+    <!-- mapper 위치쓰기 -->
+    <javaModelGenerator targetPackage="co.song.prj" targetProject="20210804exam/src/main/java"/>
+
+    <sqlMapGenerator targetPackage="mapper" targetProject="20210804exam/src/main/java"/>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="co.song.prj" targetProject="20210804exam/src/main/java"/>
+    
+    
+    <table tableName="sns" />
+    <table tableName="comments" />
+    <table tableName="member" />    
+    <!--테이블 이름들  -->
+  </context>
+</generatorConfiguration>
