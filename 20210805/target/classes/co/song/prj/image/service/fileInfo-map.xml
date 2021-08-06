@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.song.prj.image.service.FileInfoMapper">
+<select id="fileSelectList" resultType="co.song.prj.image.vo.FileInformationVO">
+select* FROM fileinformation ORDER BY num DESC
+</select>
+<select id="fileSelect" resultType="co.song.prj.image.vo.FileInformationVO">
+SELECT * FROM fileinformation
+WHERE num=#{key}
+</select>
+<insert id="fileInsert" parameterType="co.song.prj.image.vo.FileInformationVO">
+INSERT INTO fileinformation(num,subject,filename,downfile) VALUES(f_seq.nextval,#{subject},#{fileName},#{downFile})
+</insert>
+<delete id="fileDelete">
+DELETE FROM fileinformation WHERE num=#{key}
+</delete>
+<update id="fileUpdate">
+
+</update>
+
+</mapper>
