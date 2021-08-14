@@ -1,6 +1,5 @@
 package co.song.prj.image.vo;
 
-
 import lombok.Getter;
 import lombok.Setter;
 

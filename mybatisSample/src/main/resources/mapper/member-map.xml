@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="co.song.prj.member.MemberMapper">
+  <select id="memberSelectList" resultType="co.song.prj.member.vo.MemberVO">
+  SELECT * FROM member
+  </select>
+  <select id="memberSelect" resultType="co.song.prj.member.vo.MemberVO">
+  SELECT * FROM member WHERE id = #{id}
+  </select>
+  <insert id="memberInsert" parameterType="co.song.prj.member.vo.MemberVO">
+  INSERT INTO member(id, password, name, age, gender)
+  VALUES(#{id},#{password},#{name},#{age},#{gender})
+  </insert>
+  <update id="memberUpdate" parameterType="co.song.prj.member.vo.MemberVO">
+  UPDATE member SET gender =#{gender} WHERE id = #{id}
+  </update>
+  <delete id="memberDelete" parameterType="co.song.prj.member.vo.MemberVO">
+  UPDATE member SET state = 'D' WHERE id=#{id}
+  </delete>
+  
+</mapper>

@@ -26,6 +26,7 @@ public class FileDownLoad implements Command {
 		System.out.println(request.getParameter("orgFile"));
 		System.out.println(request.getParameter("downFile"));
 		return "file/fileDownMessage";
+		
 	
 	}
 }

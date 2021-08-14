@@ -9,6 +9,7 @@ import co.song.prj.image.vo.FileInformationVO;
 
 public class FileInfoService {
 	private SqlSession sqlSession =DataSource.getInstance().openSession(true);
+	
 	private FileInfoMapper map= sqlSession.getMapper(FileInfoMapper.class);
 	
 	
