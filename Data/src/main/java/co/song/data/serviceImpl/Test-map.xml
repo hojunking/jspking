@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.song.data.serviceImpl.TestServiceMapper">
+  <select id="testSelectList" resultType="co.song.data.vo.TestVO">
+    select * from test
+  </select>
+  <select id="testSelect" resultType="co.song.data.vo.TestVO">
+  select * from Test where id = #{id}
+  </select>
+  <insert id="testInsert" parameterType="co.song.data.vo.TestVO">
+  INSERT INTO test VALUES(#{id},#{name},#{phone},#{address},#{birth})
+  </insert>
+<delete id="testDelete" parameterType="co.song.data.vo.TestVO">
+  DELETE FROM test WHERE id=#{id}
+  </delete>
+  <update id="testUpdate" parameterType="co.song.data.vo.TestVO">
+  UPDATE test SET id=#{id},name=#{name},birth=#{birth},address=#{address},
+  phone=#{phone} WHERE id=#{id}
+  </update>
+</mapper>
