@@ -22,12 +22,13 @@ public class DownLoadFile {
 		FileInputStream in;
 		try {
 			in= new FileInputStream(file);
-			FileOutputStream outFile=new FileOutputStream("d://download//"+orgFileName);
+			FileOutputStream outFile=new FileOutputStream("c:/pracfile/install/"+orgFileName);
 			byte b[] =new byte[4096];
 			int data=0;
 			while((data = in.read(b,0,b.length)) != -1) {
 				outFile.write(b,0,data);
 			}
+			
 			outFile.flush();
 			in.close();
 			outFile.close();

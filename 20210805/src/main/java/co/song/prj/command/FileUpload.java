@@ -22,7 +22,7 @@ public class FileUpload implements Command {
 		System.out.println(request.getParameter("subject"));
 		try {
 			MultipartRequest part = new MultipartRequest
-					(request, "d:/temp/", maxFileSize,"utf-8", new DefaultFileRenamePolicy());
+					(request, "c:/pracfile/", maxFileSize,"utf-8", new DefaultFileRenamePolicy());
 			
 			//enctype="multipart/form-data"를 사용하게 되면, request.getParameter가 사용이 불가능하다.
 			

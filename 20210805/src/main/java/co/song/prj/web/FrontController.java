@@ -42,9 +42,6 @@ public class FrontController extends HttpServlet {
 	map.put("/fileDownLoad.do",new FileDownLoad());
 	}
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	request.setCharacterEncoding("utf-8");
 	String uri= request.getRequestURI();
